@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Components in HTML</title>
+</head>
+<body>
+    <!-- Container for Hello React component -->
+    <div id="hello-component"></div>
+
+    <!-- Container for Goodbye React component -->
+    <div id="goodbye-component"></div>
+
+    <!-- Load React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Load the bundled JavaScript files -->
+    <script src="/dist/hello.js"></script>
+    <script src="/dist/goodbye.js"></script>
+
+    <script>
+        // Wait for the components to be loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Use createRoot to render the Hello component
+            const helloRoot = ReactDOM.createRoot(document.getElementById('hello-component'));
+            helloRoot.render(React.createElement(window.hello.default));
+
+            // Use createRoot to render the Goodbye component
+            const goodbyeRoot = ReactDOM.createRoot(document.getElementById('goodbye-component'));
+            goodbyeRoot.render(React.createElement(window.goodbye.default));
+        });
+    </script>
+</body>
+</html>
