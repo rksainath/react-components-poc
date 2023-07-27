@@ -2,17 +2,37 @@
 <html>
 <head>
     <title>React Components in HTML</title>
-</head>
-<body>
-    <!-- Container for Hello React component -->
-    <div id="hello-component"></div>
-
-    <!-- Container for Goodbye React component -->
-    <div id="goodbye-component"></div>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
     <!-- Load React and ReactDOM from CDN -->
+
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script> -->
+    <!-- <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"
+        integrity="sha512-8Q6Y9XnTbOE+JNvjBQwJ2H8S+UV4uA6hiRykhdtIyDYZ2TprdNmWOUaKdGzOhyr4dCyk287OejbPvwl7lrfqrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"
+        integrity="sha512-MOCpqoRoisCTwJ8vQQiciZv0qcpROCidek3GTFS6KTk2+y7munJIlKCVkFCYY+p3ErYFXCjmFjnfTTRSC1OHWQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+</head>
+<body>
+    <div class="container">
+        <!-- Container for Hello React component -->
+        <div class="text-center my-3" id="hello-component"></div>
+
+        <!-- Container for Goodbye React component -->
+        <div class="text-center my-3" id="goodbye-component"></div>
+
+        <!-- Container for Card Details React component -->
+        <div id="cardDetails-component"></div>
+    </div>
 
     <!-- Load the bundled JavaScript files -->
 
@@ -20,6 +40,7 @@
     <!-- <script src="/dist/goodbye.js"></script> -->
     <script src="https://react-components-poc.vercel.app/hello.js"></script>
     <script src="https://react-components-poc.vercel.app/goodbye.js"></script>
+    <script src="https://react-components-poc.vercel.app/cardDetails.js"></script>
 
     <script>
         // Wait for the components to be loaded
@@ -31,6 +52,11 @@
             // Use createRoot to render the Goodbye component
             const goodbyeRoot = ReactDOM.createRoot(document.getElementById('goodbye-component'));
             goodbyeRoot.render(React.createElement(window.goodbye.default));
+
+            // Use createRoot to render the card details component
+            const cardDetailsRoot = ReactDOM.createRoot(document.getElementById('cardDetails-component'));
+            cardDetailsRoot.render(React.createElement(window.cardDetails.default));
+
         });
     </script>
 </body>

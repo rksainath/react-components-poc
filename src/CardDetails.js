@@ -30,19 +30,19 @@ const CardDetails = () => {
           <form onSubmit={handleSubmit}>
             <div className='form-group'>
               <label>Cardholder Name</label>
-              <input type='text' name='cardholderName' className='form-control' value={formData.cardholderName} onChange={handleChange} required />
+              <input type='text' name='cardholderName' className='form-control' value={formData?.cardholderName} onChange={handleChange} required />
             </div>
             <div className='form-group'>
               <label>Card Number</label>
-              <input type='text' name='cardNumber' className='form-control' value={formData.cardNumber} onChange={handleChange} required />
+              <input type='text' name='cardNumber' className='form-control' value={formData?.cardNumber} onChange={handleChange} required />
             </div>
             <div className='form-group'>
               <label>Expiration Date</label>
-              <input type='text' name='expirationDate' className='form-control' value={formData.expirationDate} onChange={handleChange} required />
+              <input type='text' name='expirationDate' className='form-control' value={formData?.expirationDate} onChange={handleChange} required />
             </div>
             <div className='form-group'>
               <label>CVV</label>
-              <input type='text' name='cvv' className='form-control' value={formData.cvv} onChange={handleChange} required />
+              <input type='text' name='cvv' className='form-control' value={formData?.cvv} onChange={handleChange} required />
             </div>
             <button type='submit' className='btn btn-primary'>
               Pay Now
