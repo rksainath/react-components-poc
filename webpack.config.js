@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     hello: './src/Hello.js',
     goodbye: './src/Goodbye.js',
+    cardDetails: './src/CardDetails.js',
   },
   output: {
     filename: '[name].js',
